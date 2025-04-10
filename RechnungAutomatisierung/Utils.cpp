@@ -9,26 +9,26 @@ namespace Utils {
 
 void printTable(const std::vector<std::string>& headers, const std::vector<std::vector<std::string>>& data) {
     if (headers.empty() || data.empty()) {
-        std::cout << "No data to display" << std::endl;
+        std::cout << "Keine Daten zum Anzeigen" << std::endl;
         return;
     }
     
-    // Calculate column widths
+    // Spaltenbreiten berechnen
     std::vector<size_t> columnWidths(headers.size(), 0);
     
-    // Set minimum width based on headers
+    // Minimale Breite anhand der Überschriften festlegen
     for (size_t i = 0; i < headers.size(); i++) {
         columnWidths[i] = headers[i].length();
     }
     
-    // Update widths based on data
+    // Breiten anhand der Daten aktualisieren
     for (const auto& row : data) {
         for (size_t i = 0; i < std::min(row.size(), headers.size()); i++) {
             columnWidths[i] = std::max(columnWidths[i], row[i].length());
         }
     }
     
-    // Print headers
+    // Überschriften ausgeben
     std::cout << "+";
     for (size_t width : columnWidths) {
         std::cout << std::string(width + 2, '-') << "+";
@@ -41,14 +41,14 @@ void printTable(const std::vector<std::string>& headers, const std::vector<std::
     }
     std::cout << std::endl;
     
-    // Print separator
+    // Trennlinie ausgeben
     std::cout << "+";
     for (size_t width : columnWidths) {
         std::cout << std::string(width + 2, '-') << "+";
     }
     std::cout << std::endl;
     
-    // Print data
+    // Daten ausgeben
     for (const auto& row : data) {
         std::cout << "|";
         for (size_t i = 0; i < std::min(row.size(), headers.size()); i++) {
@@ -57,7 +57,7 @@ void printTable(const std::vector<std::string>& headers, const std::vector<std::
         std::cout << std::endl;
     }
     
-    // Print footer
+    // Fußzeile ausgeben
     std::cout << "+";
     for (size_t width : columnWidths) {
         std::cout << std::string(width + 2, '-') << "+";
@@ -88,7 +88,7 @@ std::string formatDate(int year, int month, int day) {
 }
 
 bool parseDate(const std::string& dateStr, int& year, int& month, int& day) {
-    // Expected format: YYYY-MM-DD
+    // Erwartetes Format: JJJJ-MM-TT
     if (dateStr.length() != 10 || dateStr[4] != '-' || dateStr[7] != '-') {
         return false;
     }
@@ -98,7 +98,7 @@ bool parseDate(const std::string& dateStr, int& year, int& month, int& day) {
         month = std::stoi(dateStr.substr(5, 2));
         day = std::stoi(dateStr.substr(8, 2));
         
-        // Basic validation
+        // Grundlegende Validierung
         if (month < 1 || month > 12 || day < 1 || day > 31) {
             return false;
         }
@@ -114,11 +114,11 @@ bool isNumber(const std::string& str) {
         return false;
     }
     
-    // Check if the string is a valid number
+    // Prüfen ob der String eine gültige Zahl ist
     char* endPtr;
     std::strtod(str.c_str(), &endPtr);
     
-    // If endPtr points to the end of the string, it's a valid number
+    // Wenn endPtr auf das Ende des Strings zeigt, ist es eine gültige Zahl
     return *endPtr == '\0';
 }
 
@@ -134,4 +134,4 @@ double toNumber(const std::string& str, double defaultValue) {
     }
 }
 
-} 
+}
