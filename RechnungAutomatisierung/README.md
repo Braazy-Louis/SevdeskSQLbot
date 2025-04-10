@@ -26,11 +26,11 @@ cmake --build .
 
 Die Anwendung verwendet standardmäßig folgende Datenbankeinstellungen:
 
-- Server: 193.203.168.148
-- Datenbank: u950594034_A6Hnf
-- Benutzername: u950594034_sVzHH
-- Passwort: Rj9VJczDzZ
-- Port: 3306
+- Server: ********
+- Datenbank: *******
+- Benutzername: *********
+- Passwort: *********
+- Port: ********
 
 Diese Einstellungen können in der `Application.cpp`-Datei angepasst werden.
 
