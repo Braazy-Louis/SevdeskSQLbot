@@ -22,10 +22,10 @@ bool Application::initialize()
 {
     // Datenbankverbindungsdaten
     m_config.setDriverName("MySQL ODBC 9.2 Unicode Driver");
-    m_config.setServer("193.203.168.148");
-    m_config.setDatabase("u950594034_A6Hnf");
-    m_config.setUsername("u950594034_sVzHH");
-    m_config.setPassword("Rj9VJczDzZ");
+    m_config.setServer("*******");
+    m_config.setDatabase("********");
+    m_config.setUsername("**********");
+    m_config.setPassword("**********");
     m_config.setPort(3306);
     
     m_isInitialized = true;
