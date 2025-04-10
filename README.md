@@ -57,4 +57,3 @@ Die Datenbankverbindung kann über die `DatabaseConfig`-Klasse angepasst werden:
 - Passwort
 - Port
 
-## 📁 Projektstruktur
